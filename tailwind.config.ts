@@ -8,8 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        
+      backgroundColor: {
+        primary: '#0D1B2A',
+        secondary: '#1B263B',
+        tertiary: '#1F2C43',
+        quaternary: '#22304A',
+      },
+      textColor: {
+        primary: '#E0E1DD',
+        secondary: '#C5C6C7',
       },
     },
   },
