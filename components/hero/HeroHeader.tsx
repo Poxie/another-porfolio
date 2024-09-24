@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl"
 import HeroLinks from "./HeroLinks";
+import HeroReadMoreButton from "./HeroReadMoreButton";
 
 export default function HeroHeader() {
     const t = useTranslations('hero');
@@ -16,6 +17,7 @@ export default function HeroHeader() {
                 {t('paragraph')}
             </p>
             <HeroLinks className="mt-6" />
+            <HeroReadMoreButton />
         </div>
     )
 }
