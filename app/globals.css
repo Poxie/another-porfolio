@@ -6,4 +6,8 @@
   body {
     @apply bg-primary text-primary;
   }
+
+  .main-width {
+    @apply w-main max-w-main mx-auto
+  }
 }
