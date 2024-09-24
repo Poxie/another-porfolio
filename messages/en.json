@@ -3,5 +3,11 @@
         "header": "Hi, Albin here.",
         "subheader": "I create stuff sometimes.",
         "paragraph": "I am a full stack developer, with experience in frontend, backend & cloud technologies."
+    },
+    "navbar": {
+        "about": "About",
+        "projects": "Projects",
+        "tect-stack": "Tech-stack",
+        "contact": "Contact"
     }
 }
