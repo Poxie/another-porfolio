@@ -21,6 +21,9 @@ const config: Config = {
         tertiary: '#1F2C43',
         quaternary: '#22304A',
         light: '#fff',
+
+        success: '#2ECC71',
+        error: '#E74C3C',
       },
       fill: {
         primary: '#0D1B2A',
@@ -35,9 +38,11 @@ const config: Config = {
       padding: {
         'section-base': '8rem',
         'section-lg': '16rem',
+        'section-sm': '5.25rem',
       },
       width: {
         main: '1200px',
+        contact: '550px',
       },
       maxWidth: {
         main: '95%',

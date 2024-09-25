@@ -60,6 +60,14 @@
             "description": "I enjoy making applications autonomous using Google’s cloud services."
         }
     },
+    "contact": {
+        "title": "Let's get in touch.",
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Start conversation",
+        "success": "Thank you for your message."
+    },
     "navbar": {
         "about": "About",
         "projects": "Projects",

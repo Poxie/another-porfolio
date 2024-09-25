@@ -19,6 +19,9 @@
     @apply bg-primary absolute bottom-0 right-0 w-[--cut-size] translate-y-[50%] translate-x-[50%] aspect-square border-l-[1px] border-l-secondary rotate-45;
     content: '';
   }
+  .cut-corner-secondary::after {
+    @apply bg-secondary border-l-quaternary;
+  }
 
   .stroke-secondary {
     --stroke-color: theme(colors.tertiary);
