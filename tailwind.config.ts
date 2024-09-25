@@ -20,6 +20,7 @@ const config: Config = {
         secondary: '#1B263B',
         tertiary: '#1F2C43',
         quaternary: '#22304A',
+        light: '#fff',
       },
       fill: {
         primary: '#0D1B2A',

@@ -1,4 +1,4 @@
-import { NAVBAR_TABS } from "@/constants/navbarTabs";
+import { NAVBAR_TABS } from "@/constants/tabs";
 import { useTranslations } from "next-intl";
 import { twMerge } from "tailwind-merge";
 

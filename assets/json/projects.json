@@ -1,0 +1,34 @@
+[
+    {
+        "id": "statify",
+        "image": "statify.png",
+        "figma": "https://www.figma.com/proto/2AT6A1xuBWXLmuwoyehxNu?node-id=0-1&t=j6iZdKd0A96HUuu6-6",
+        "github": "https://github.com/Poxie/statify",
+        "demo": "https://statify.poxen.dev",
+        "tech": ["Next.js", "Redux", "Tailwind", "API"]
+    },
+    {
+        "id": "medito",
+        "image": "medito.png",
+        "figma": "https://www.figma.com/design/XJLLyttYk2sUvSMcYEgj01/Medito?m=auto&t=j6iZdKd0A96HUuu6-6",
+        "github": "https://github.com/Poxie/medito",
+        "demo": "https://medito.poxen.dev",
+        "tech": ["Next.js", "Tailwind", "Stripe"]
+    },
+    {
+        "id": "onixo",
+        "image": "onixo.png",
+        "figma": "https://www.figma.com/proto/eh8BWbTzABIbKouSecClcH?node-id=0-1&t=j6iZdKd0A96HUuu6-6",
+        "github": "https://github.com/Poxie/onixo-new",
+        "demo": "https://onixo.xyz",
+        "tech": ["Next.js", "Python", "Socket.io"]
+    },
+    {
+        "id": "portfolio",
+        "image": "portfolio.png",
+        "figma": "https://www.figma.com/proto/0PUAXDWk15w8kXTIgvZNhN/Untitled?page-id=0%3A1&node-id=1-2",
+        "github": "https://github.com/Poxie/another-portfolio",
+        "demo": "https://poxen.dev",
+        "tech": ["Next.js", "Tailwind", "i18n"]
+    }
+]

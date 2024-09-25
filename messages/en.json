@@ -4,6 +4,40 @@
         "subheader": "I create stuff sometimes.",
         "paragraph": "I am a full stack developer, with experience in frontend, backend & cloud technologies."
     },
+    "about": {
+        "title": "About my journey",
+        "tabs": {
+            "about": "About me",
+            "how-it-started": "How it started",
+            "my-mindset": "My mindset"
+        },
+        "content": {
+            "about": "My name is Albin Kärvling. I have been coding since I was 12, and am currently {age} years old. I am a full stack developer specializing in frontend development, but have knowledge of both backend and cloud solutions. In 2023, I graduated high school specializing in natural sciences, though programming has always been my true calling."
+        }
+    },
+    "projects": {
+        "title": "Projects",
+        "statify": {
+            "title": "Statify",
+            "description": "An application to expand and view your listening habits. Made using Next.js and Spotify’s API.",
+            "date": "Sep, 2023"
+        },
+        "medito": {
+            "title": "Medito",
+            "description": "A fundraiser website created for a well-established meditation organization.",
+            "date": "Jan, 2024"
+        },
+        "onixo": {
+            "title": "Onixo",
+            "description": "A website for a multi-purpose discord bot. Information and an interactive dashboard.",
+            "date": "Jan, 2024"
+        },
+        "portfolio": {
+            "title": "Portfolio",
+            "description": "My website displaying my knowledge, experiences, tech-stack and a little about me.",
+            "date": "Sep, 2024"
+        }
+    },
     "navbar": {
         "about": "About",
         "projects": "Projects",
