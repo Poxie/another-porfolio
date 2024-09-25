@@ -12,7 +12,7 @@ export default function About() {
     const [activeTab, setActiveTab] = useState<AboutTab>(ABOUT_TABS[0]);
     
     return(
-        <section className="main-width py-section-lg pb-section-base">
+        <section className="main-width py-section-lg pb-section-base" id="about">
             <h2 className="text-5xl font-semibold">
                 {t('title')}
             </h2>

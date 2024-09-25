@@ -3,7 +3,7 @@ import TechPodium from './TechPodium';
 
 export default function TechStack() {
     return(
-        <section className="main-width pt-section-base grid grid-cols-5 items-end">
+        <section className="main-width pt-section-base grid grid-cols-5 items-end" id="tech-stack">
             {techStack.map((tech, index) => {
                 let heightDecimal = 1;
                 if([1,3].includes(index)) heightDecimal = 5/6;

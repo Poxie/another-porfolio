@@ -71,7 +71,7 @@
     "navbar": {
         "about": "About",
         "projects": "Projects",
-        "tect-stack": "Tech-stack",
+        "tech-stack": "Tech-stack",
         "contact": "Contact"
     },
     "footer": {
