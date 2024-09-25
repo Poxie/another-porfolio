@@ -9,10 +9,13 @@ export default function Project({ project, index, reversed }: {
     reversed: boolean;
 }) {
     return(
-        <div className={twMerge(
-            "flex items-center gap-32",
-            reversed && 'flex-row-reverse',
-        )}>
+        <div 
+            id={project.id}
+            className={twMerge(
+                "py-16 flex items-center gap-32",
+                reversed && 'flex-row-reverse',
+            )}
+        >
             <ProjectInfo 
                 project={project}
                 index={index}

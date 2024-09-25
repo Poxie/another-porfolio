@@ -5,6 +5,7 @@ import ProjectCardContent from "./ProjectCardContent";
 import { useRef } from "react";
 import useDirectionHover from "@/hooks/useDirectionHover";
 import DirectionHover from "../direction-hover";
+import scrollToSection from "@/utils/scrollToSection";
 
 export default function ProjectCard({ project }: {
     project: ProjectType;
@@ -22,6 +23,11 @@ export default function ProjectCard({ project }: {
             <ProjectCardContent project={project} />
 
             <DirectionHover ref={hoverRef} />
+
+            <button
+                className="absolute inset-0 w-full h-full"
+                onClick={() => scrollToSection(project.id)}
+            />
         </div>
     )
 }

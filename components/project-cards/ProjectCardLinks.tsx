@@ -13,7 +13,7 @@ export default function ProjectCardLinks({ project }: {
     ];
 
     return(
-        <ul className="-mr-1 flex">
+        <ul className="-mr-1 flex relative z-[1]">
             {links.map(link => (
                 <li key={link.href}>
                     <a

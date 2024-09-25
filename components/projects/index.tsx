@@ -4,7 +4,7 @@ import Project from './Project';
 export default function Projects() {
     return(
         <section className="py-section-base border-t-[1px] border-t-secondary">
-            <ul className="main-width grid gap-32">
+            <ul className="main-width">
                 {PROJECTS.map((project, index) => (
                     <li key={project.id}>
                         <Project 
