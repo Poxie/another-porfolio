@@ -29,6 +29,14 @@ export default function Project({ project }: {
         ));
     }
 
+    const clearTransition = () => {
+        if(!hoverRef.current) return;
+        hoverRef.current.style.transition = 'none';
+    }
+    const setTransition = () => {
+        if(!hoverRef.current) return;
+        hoverRef.current.style.transition = 'left .3s, top .3s';
+    }
     const setStartingPositions = (side: string) => {
         if (!hoverRef.current) return;
 
@@ -61,29 +69,27 @@ export default function Project({ project }: {
     }
 
     const handleEnter = (e: React.MouseEvent) => {
-        if (!hoverRef.current) return;
+        if(!hoverRef.current) return;
 
         const entrySide = getMouseSide(e);
 
-        hoverRef.current.style.transition = 'none';
-
+        clearTransition();
         setStartingPositions(entrySide);
 
         setTimeout(() => {
-            if (!hoverRef.current) return;
-            hoverRef.current.style.transition = 'left .3s, top .3s';
+            if(!hoverRef.current) return;
 
+            setTransition();
             setActivePosition();
         });
     };
 
     const handleLeave = (e: React.MouseEvent) => {
-        if (!hoverRef.current) return;
+        if(!hoverRef.current) return;
 
         const exitSide = getMouseSide(e);
 
-        hoverRef.current.style.transition = 'left .3s, top .3s';
-
+        setTransition();
         setStartingPositions(exitSide);
     };
 
