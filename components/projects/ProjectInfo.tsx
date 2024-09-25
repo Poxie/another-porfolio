@@ -1,5 +1,9 @@
 import { Project } from "@/assets/json/types";
 import { useTranslations } from "next-intl";
+import Button from "../button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import ProjectLinks from "./ProjectLinks";
 
 export default function ProjectInfo({ project, index }: {
     project: Project;
@@ -21,6 +25,16 @@ export default function ProjectInfo({ project, index }: {
             <p className="mt-4 text-xl text-secondary">
                 {projectDescription}
             </p>
+            <div className="mt-6 flex gap-4 items-center">
+                <Button href={project.demo}>
+                    {t('viewProject')}
+                    <FontAwesomeIcon 
+                        icon={faArrowRight}
+                    />
+                </Button>
+
+                <ProjectLinks project={project} />
+            </div>
         </div>
     )
 }

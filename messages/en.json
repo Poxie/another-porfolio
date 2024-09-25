@@ -40,7 +40,8 @@
             "description": "My website displaying my knowledge, experiences, tech-stack and a little about me.",
             "longDescription": "I have made a lot of portfolio websites during my journey getting here. This is the latest one, made using Next.js, Tailwind and i18n for translations.",
             "date": "Sep, 2024"
-        }
+        },
+        "viewProject": "Visit site"
     },
     "navbar": {
         "about": "About",
