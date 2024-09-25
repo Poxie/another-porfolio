@@ -1,10 +1,10 @@
 "use client";
 import { Project as ProjectType } from "@/assets/json/types"
-import ProjectHeader from "./ProjectHeader";
-import ProjectContent from "./ProjectContent";
+import ProjectCardHeader from "./ProjectCardHeader";
+import ProjectCardContent from "./ProjectCardContent";
 import { useRef } from "react";
 
-export default function Project({ project }: {
+export default function ProjectCard({ project }: {
     project: ProjectType;
 }) {
     const hoverRef = useRef<HTMLDivElement>(null);
@@ -99,8 +99,8 @@ export default function Project({ project }: {
             onMouseEnter={handleEnter}
             onMouseLeave={handleLeave}
         >
-            <ProjectHeader project={project} />
-            <ProjectContent project={project} />
+            <ProjectCardHeader project={project} />
+            <ProjectCardContent project={project} />
 
             <div className="z-[-1] absolute left-0 top-0 overflow-hidden w-full h-full pointer-events-none">
                 <div 

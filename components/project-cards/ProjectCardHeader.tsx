@@ -1,5 +1,5 @@
 import { Project } from "@/assets/json/types";
-import ProjectLinks from "./ProjectLinks";
+import ProjectCardLinks from "./ProjectCardLinks";
 import { useTranslations } from "next-intl";
 
 export default function ProjectHeader({ project }: {
@@ -13,7 +13,7 @@ export default function ProjectHeader({ project }: {
             <span className="text-2xl">
                 {projectTitle}
             </span>
-            <ProjectLinks project={project} />
+            <ProjectCardLinks project={project} />
         </div>
     )
 }

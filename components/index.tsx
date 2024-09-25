@@ -1,13 +1,13 @@
 import About from "./about";
 import Hero from "./hero";
-import Projects from "./projects";
+import ProjectCards from "./project-cards";
 
 export default function Home() {
     return(
         <main>
             <Hero />
             <About />
-            <Projects />
+            <ProjectCards />
         </main>
     )
 }

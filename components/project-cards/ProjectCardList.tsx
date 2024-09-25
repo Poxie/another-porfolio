@@ -1,12 +1,12 @@
 import projects from '@/assets/json/projects.json';
-import Project from './Project';
+import ProjectCard from './ProjectCard';
 
-export default function ProjectList() {
+export default function ProjectCardList() {
     return(
         <ul className="main-width grid grid-cols-3 gap-4">
             {projects.map(project => (
                 <li key={project.id}>
-                    <Project 
+                    <ProjectCard 
                         project={project}
                     />
                 </li>
