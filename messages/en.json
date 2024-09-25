@@ -43,6 +43,23 @@
         },
         "viewProject": "Visit site"
     },
+    "tech-stack": {
+        "html": {
+            "description": "Not much pure HTML nowadays, but the semantic structure is there."
+        },
+        "css": {
+            "description": "I love exploring new ways to style things. Tailwind’s the favorite right now."
+        },
+        "javascript": {
+            "description": "The language I started with, and have had by my side since."
+        },
+        "nodejs": {
+            "description": "I have explored Python for backend, but Node.js has been my go-to lately."
+        },
+        "cloud": {
+            "description": "I enjoy making applications autonomous using Google’s cloud services."
+        }
+    },
     "navbar": {
         "about": "About",
         "projects": "Projects",

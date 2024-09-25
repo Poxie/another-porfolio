@@ -1,0 +1,27 @@
+[
+    {
+        "id": "html",
+        "language": "HTML",
+        "addons": ["JSX", "SEO", "Accessibility"]
+    },
+    {
+        "id": "css",
+        "language": "CSS",
+        "addons": ["Sass/Scss", "Tailwind", "Styled Components"]
+    },
+    {
+        "id": "javascript",
+        "language": "JavaScript",
+        "addons": ["TypeScript", "React.js", "Next.js", "Redux", "React Query", "Custom Hooks", "React Native"]
+    },
+    {
+        "id": "nodejs",
+        "language": "Node.js",
+        "addons": ["Express.js", "MySQL", "Websockets", "Prisma", "GraphQL"]
+    },
+    {
+        "id": "cloud",
+        "language": "The Cloud",
+        "addons": ["Google Cloud", "GitHub Actions", "Docker"]
+    }
+]
