@@ -1,7 +1,7 @@
 [
     {
         "id": "statify",
-        "image": "statify.png",
+        "image": "statify.webp",
         "figma": "https://www.figma.com/proto/2AT6A1xuBWXLmuwoyehxNu?node-id=0-1&t=j6iZdKd0A96HUuu6-6",
         "github": "https://github.com/Poxie/statify",
         "demo": "https://statify.poxen.dev",
@@ -9,7 +9,7 @@
     },
     {
         "id": "medito",
-        "image": "medito.png",
+        "image": "medito.webp",
         "figma": "https://www.figma.com/design/XJLLyttYk2sUvSMcYEgj01/Medito?m=auto&t=j6iZdKd0A96HUuu6-6",
         "github": "https://github.com/Poxie/medito",
         "demo": "https://medito.poxen.dev",
@@ -17,7 +17,7 @@
     },
     {
         "id": "onixo",
-        "image": "onixo.png",
+        "image": "onixo.webp",
         "figma": "https://www.figma.com/proto/eh8BWbTzABIbKouSecClcH?node-id=0-1&t=j6iZdKd0A96HUuu6-6",
         "github": "https://github.com/Poxie/onixo-new",
         "demo": "https://onixo.xyz",
@@ -25,7 +25,7 @@
     },
     {
         "id": "portfolio",
-        "image": "portfolio.png",
+        "image": "portfolio.webp",
         "figma": "https://www.figma.com/proto/0PUAXDWk15w8kXTIgvZNhN/Untitled?page-id=0%3A1&node-id=1-2",
         "github": "https://github.com/Poxie/another-portfolio",
         "demo": "https://poxen.dev",

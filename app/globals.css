@@ -18,4 +18,9 @@
     @apply bg-primary absolute bottom-0 right-0 w-[8%] translate-y-[50%] translate-x-[50%] aspect-square border-l-[1px] border-l-secondary rotate-45;
     content: '';
   }
+
+  .stroke-secondary {
+    --stroke-color: theme(colors.tertiary);
+    -webkit-text-stroke: 1px var(--stroke-color); /* Adjust the color and width as needed */
+  }
 }
