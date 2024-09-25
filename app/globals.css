@@ -16,7 +16,7 @@
     position: relative;
   }
   .cut-corner::after {
-    @apply bg-primary absolute bottom-0 right-0 w-[--cut-size] translate-y-[50%] translate-x-[50%] aspect-square border-l-[1px] border-l-secondary rotate-45;
+    @apply z-10 bg-primary absolute bottom-0 right-0 w-[--cut-size] translate-y-[50%] translate-x-[50%] aspect-square border-l-[1px] border-l-secondary rotate-45;
     content: '';
   }
   .cut-corner-secondary::after {
