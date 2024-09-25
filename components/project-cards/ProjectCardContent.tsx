@@ -1,7 +1,7 @@
 import { Project } from "@/assets/json/types"
 import { useTranslations } from "next-intl";
 
-export default function ProjectContent({ project }: {
+export default function ProjectCardContent({ project }: {
     project: Project;
 }) {
     const t = useTranslations('projects');

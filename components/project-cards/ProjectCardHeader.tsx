@@ -2,7 +2,7 @@ import { Project } from "@/assets/json/types";
 import ProjectCardLinks from "./ProjectCardLinks";
 import { useTranslations } from "next-intl";
 
-export default function ProjectHeader({ project }: {
+export default function ProjectCardHeader({ project }: {
     project: Project;
 }) {
     const t = useTranslations('projects');
