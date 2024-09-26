@@ -1,26 +1,28 @@
 "use client";
+import { CSSProperties, forwardRef, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 import DirectionHover from "../direction-hover";
-import { useRef } from "react";
 import useDirectionHover from "@/hooks/useDirectionHover";
 
-export default function Button({ children, onClick, disabled, href, type="primary", className }: {
+const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, {
     children: React.ReactNode;
     onClick?: () => void;
     href?: string;
     disabled?: boolean;
     type?: 'primary' | 'secondary';
     className?: string;
-}) {
-    const containerRef = useRef<any>(null);
+    style?: CSSProperties;
+}>(({ children, onClick, disabled, href, type = "primary", className, style }, ref) => {
+    const containerRef = useRef<HTMLAnchorElement | HTMLButtonElement>(null);
     const hoverRef = useRef<HTMLDivElement>(null);
 
     useDirectionHover(containerRef, hoverRef);
 
     const props = {
-        ref: containerRef,
+        ref: (ref as any) || containerRef,
         onClick,
         disabled,
+        style,
         className: twMerge(
             "[--cut-size:15%] cut-corner py-2 px-4 flex items-center gap-3 text-primary border-[1px] border-secondary",
             type === 'secondary' && 'cut-corner-secondary border-quaternary',
@@ -36,8 +38,8 @@ export default function Button({ children, onClick, disabled, href, type="primar
         ref: hoverRef,
     }
     
-    if(href) {
-        return(
+    if (href) {
+        return (
             <a 
                 {...props}
                 href={href}
@@ -49,10 +51,12 @@ export default function Button({ children, onClick, disabled, href, type="primar
         )
     }
 
-    return(
+    return (
         <button {...props}>
             {children}
             <DirectionHover {...directionHoverProps} />
         </button>
     )
-}
+});
+
+export default Button;

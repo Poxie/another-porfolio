@@ -3,7 +3,7 @@ import useIsWithinScroll from "./useIsWithinScroll";
 
 export const DEFAULT_INITIAL_STATE = {
     opacity: 0,
-    transform: 'translateY(40px)',
+    transform: 'translateY(30px)',
 } as const;
 const DEFAULT_DELAY = 0;
 const DEFAULT_DURATION = 600;
