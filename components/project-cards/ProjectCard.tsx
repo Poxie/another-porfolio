@@ -6,18 +6,24 @@ import { useRef } from "react";
 import useDirectionHover from "@/hooks/useDirectionHover";
 import DirectionHover from "../direction-hover";
 import scrollToSection from "@/utils/scrollToSection";
+import useAnimateIntoView from "@/hooks/useAnimateIntoView";
 
-export default function ProjectCard({ project }: {
+export default function ProjectCard({ project, index }: {
     project: ProjectType;
+    index: number;
 }) {
     const containerRef = useRef<HTMLDivElement>(null);
     const hoverRef = useRef<HTMLDivElement>(null);
 
     useDirectionHover(containerRef, hoverRef);
+    const { initialState } = useAnimateIntoView(containerRef, {
+        delay: index * 100,
+    });
     return(
         <div 
             className="cut-corner border-[1px] border-secondary"
             ref={containerRef}
+            style={initialState}
         >
             <ProjectCardHeader project={project} />
             <ProjectCardContent project={project} />

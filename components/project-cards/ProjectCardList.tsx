@@ -4,10 +4,11 @@ import ProjectCard from './ProjectCard';
 export default function ProjectCardList() {
     return(
         <ul className="main-width grid grid-cols-3 gap-4">
-            {projects.map(project => (
+            {projects.map((project, index) => (
                 <li key={project.id}>
                     <ProjectCard 
                         project={project}
+                        index={index}
                     />
                 </li>
             ))}
