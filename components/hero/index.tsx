@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import HeroHeader from './HeroHeader';
 import HeroNavigation from './HeroNavigation';
 import HeroBackground from './HeroBackground';
+import HeroReadMoreButton from './HeroReadMoreButton';
 
 export default function Hero() {
     const t = useTranslations('hero');
@@ -11,6 +12,7 @@ export default function Hero() {
             <HeroBackground />
             <HeroHeader />
             <HeroNavigation />
+            <HeroReadMoreButton />
         </section>
     )
 }

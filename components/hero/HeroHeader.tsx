@@ -1,7 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl"
 import HeroLinks from "./HeroLinks";
-import HeroReadMoreButton from "./HeroReadMoreButton";
 import { useRef } from "react";
 import useAnimateIntoView from "@/hooks/useAnimateIntoView";
 
@@ -42,7 +41,6 @@ export default function HeroHeader() {
                 className="mt-6"
                 siblingRef={headerRef}
             />
-            <HeroReadMoreButton />
         </div>
     )
 }
