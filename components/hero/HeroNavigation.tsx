@@ -3,23 +3,20 @@ import { NAVBAR_TABS } from "@/constants/tabs";
 import scrollToSection from "@/utils/scrollToSection";
 import { useTranslations } from "next-intl";
 import { twMerge } from "tailwind-merge";
+import HeroNavigationTab from "./HeroNavigationTab";
 
 export default function HeroNavigation() {
     const t = useTranslations('navbar');
     
     return(
         <ul className="[--right:3rem] pr-[--right] absolute right-0 top-2/4 -translate-y-2/4 overflow-hidden">
-            {NAVBAR_TABS.map(tab => (
+            {NAVBAR_TABS.map((tab, index) => (
                 <li>
-                    <button
-                        onClick={() => scrollToSection(tab)}
-                        className={twMerge(
-                            "w-full p-8 relative text-6xl text-right font-bold uppercase",
-                            "after:z-[-1] after:absolute after:top-2/4 after:-translate-y-2/4 after:h-full after:left-[calc(100%+var(--right))] after:w-[calc(100%+var(--right))] after:border-y-2 after:border-y-secondary after:bg-gradient-to-l after:from-secondary after:to-primary after:duration-500 after:transition-[left] hover:after:left-0"
-                        )}
-                    >
-                        {t(tab)}
-                    </button>
+                    <HeroNavigationTab 
+                        tab={tab}
+                        index={index}
+                        key={tab}
+                    />
                 </li>
             ))}
         </ul>
