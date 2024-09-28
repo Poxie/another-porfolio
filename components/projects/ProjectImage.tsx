@@ -7,20 +7,26 @@ import Image from "next/image";
 import { useRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-export default function ProjectImage({ project }: {
+export default function ProjectImage({ project, siblingRef }: {
     project: Project;
+    siblingRef?: React.RefObject<HTMLElement>;
 }) {
     const t = useTranslations('projects');
 
     const coverRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
 
-    const visible = useIsWithinScroll(coverRef);
+    useAnimateIntoView(coverRef, {
+        initialState: { left: '-100%' },
+        state: { left: '100%' },
+        duration: 2700,
+        siblingRef,
+    });
     useAnimateIntoView(imageRef, {
         initialState: { opacity: 0 },
-        delay: 1050,
+        delay: 800,
         duration: 0,
-        siblingRef: coverRef,
+        siblingRef,
     });
 
     const alt = `${t(`${project.id}.title`)}'s preview image`;
@@ -31,7 +37,6 @@ export default function ProjectImage({ project }: {
                     ref={coverRef}
                     className={twMerge(
                         "z-[1] absolute -left-full top-0 w-full h-full bg-secondary",
-                        visible && 'left-full transition-[left,top] duration-[3s] ease-in-out'
                     )}
                 />
                 <Image 

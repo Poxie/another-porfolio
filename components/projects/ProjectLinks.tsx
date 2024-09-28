@@ -6,7 +6,7 @@ import { createRef, useRef } from "react";
 
 export default function ProjectLinks({ project, siblingRef }: {
     project: Project;
-    siblingRef: React.RefObject<HTMLElement>;
+    siblingRef?: React.RefObject<HTMLElement>;
 }) {
     const links = [
         { href: project.github, icon: faGithub },

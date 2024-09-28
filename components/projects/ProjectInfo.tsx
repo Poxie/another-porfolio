@@ -8,9 +8,10 @@ import ProjectLinks from "./ProjectLinks";
 import { useRef } from "react";
 import useAnimateIntoView from "@/hooks/useAnimateIntoView";
 
-export default function ProjectInfo({ project, index }: {
+export default function ProjectInfo({ project, index, siblingRef }: {
     project: Project;
     index: number;
+    siblingRef?: React.RefObject<HTMLElement>;
 }) {
     const t = useTranslations('projects');
 
@@ -18,14 +19,14 @@ export default function ProjectInfo({ project, index }: {
     const descriptionRef = useRef<HTMLParagraphElement>(null);
     const buttonRef = useRef<HTMLDivElement>(null);
 
-    const { initialState } = useAnimateIntoView(titleRef);
+    const { initialState } = useAnimateIntoView(titleRef, { siblingRef });
     useAnimateIntoView(descriptionRef, {
         delay: 200,
-        siblingRef: titleRef,
+        siblingRef,
     });
     useAnimateIntoView(buttonRef, {
         delay: 400,
-        siblingRef: descriptionRef,
+        siblingRef,
     });
 
     const projectIndex = (index + 1).toString().padStart(2, '0');
@@ -66,7 +67,7 @@ export default function ProjectInfo({ project, index }: {
 
                 <ProjectLinks 
                     project={project}
-                    siblingRef={titleRef}
+                    siblingRef={siblingRef}
                 />
             </div>
         </div>
