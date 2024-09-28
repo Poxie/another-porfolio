@@ -106,13 +106,21 @@ function Line({ direction, index, highlight }: {
     index: number;
     highlight?: boolean;
 }) {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     return(
         <div 
             className={twMerge(
-                "absolute bg-secondary/60",
+                "absolute bg-secondary/60 transition-[height,width] duration-[2s] ease-in-out",
                 highlight && 'bg-white/20',
-                direction === 'vertical' && "w-[1px] h-full",
-                direction === 'horizontal' && 'w-full h-[1px]'
+                direction === 'vertical' && "w-[1px] h-0",
+                direction === 'horizontal' && 'w-0 h-[1px]',
+                mounted && direction === 'vertical' && 'h-full',
+                mounted && direction === 'horizontal' && 'w-full',
             )} 
             style={{
                 top: direction === 'horizontal' ? `${index * SQUARE_SIZE}px` : 0,
