@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 const SQUARE_SIZE = 80;
@@ -49,46 +49,57 @@ export default function HeroBackground() {
             className="z-[-1] absolute inset-0"
             ref={containerRef}
         >
-            <div 
-                className="z-[1] absolute inset-0 transition-[clip-path] ease-linear"
+            <Grid 
+                verticalLineCount={verticalLineCount}
+                horizontalLineCount={horizontalLineCount}
+                className="z-[1] transition-[clip-path] ease-linear"
+                style={{ clipPath: 'circle(0px)' }}
+                isHighlighted
                 ref={clippingRef}
-            >
-                {Array.from({ length: horizontalLineCount }).map((_, i) => (
-                    <Line
-                        highlight
-                        direction="horizontal"
-                        index={i}
-                        key={i}
-                    />
-                ))}
-                {Array.from({ length: verticalLineCount }).map((_, i) => (
-                    <Line
-                        highlight
-                        direction="vertical"
-                        index={i}
-                        key={i}
-                    />
-                ))}
-            </div>
-            <div className="absolute inset-0">
-                {Array.from({ length: horizontalLineCount }).map((_, i) => (
-                    <Line
-                        direction="horizontal"
-                        index={i}
-                        key={i}
-                    />
-                ))}
-                {Array.from({ length: verticalLineCount }).map((_, i) => (
-                    <Line
-                        direction="vertical"
-                        index={i}
-                        key={i}
-                    />
-                ))}
-            </div>
+            />
+            <Grid 
+                verticalLineCount={verticalLineCount}
+                horizontalLineCount={horizontalLineCount}
+            />
         </div>
     )
 }
+
+const Grid = React.forwardRef<HTMLDivElement, {
+    verticalLineCount: number;
+    horizontalLineCount: number;
+    isHighlighted?: boolean;
+    className?: string;
+    style?: React.CSSProperties;
+}>(({ verticalLineCount, horizontalLineCount, isHighlighted, style, className }, ref) => {
+    return(
+        <div 
+            className={twMerge(
+                "absolute inset-0",
+                className,
+            )}
+            style={style}
+            ref={ref}
+        >
+            {Array.from({ length: horizontalLineCount }).map((_, i) => (
+                <Line
+                    highlight={isHighlighted}
+                    direction="horizontal"
+                    index={i}
+                    key={i}
+                />
+            ))}
+            {Array.from({ length: verticalLineCount }).map((_, i) => (
+                <Line
+                    highlight={isHighlighted}
+                    direction="vertical"
+                    index={i}
+                    key={i}
+                />
+            ))}
+        </div>
+    )
+})
 
 function Line({ direction, index, highlight }: {
     direction: 'vertical' | 'horizontal';
