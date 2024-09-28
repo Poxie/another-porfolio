@@ -16,7 +16,7 @@ export default function ProjectInfo({ project, index }: {
 
     const titleRef = useRef<HTMLSpanElement>(null);
     const descriptionRef = useRef<HTMLParagraphElement>(null);
-    const buttonRef = useRef<HTMLAnchorElement>(null);
+    const buttonRef = useRef<HTMLDivElement>(null);
 
     const { initialState } = useAnimateIntoView(titleRef);
     useAnimateIntoView(descriptionRef, {

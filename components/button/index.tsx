@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 import DirectionHover from "../direction-hover";
 import useDirectionHover from "@/hooks/useDirectionHover";
 
-const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, {
+const Button = forwardRef<HTMLDivElement, {
     children: React.ReactNode;
     onClick?: () => void;
     href?: string;
@@ -12,7 +12,7 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, {
     type?: 'primary' | 'secondary';
     className?: string;
     style?: CSSProperties;
-}>(({ children, onClick, disabled, href, type = "primary", className, style }) => {
+}>(({ children, onClick, disabled, href, type = "primary", className, style }, ref) => {
     const containerRef = useRef<HTMLAnchorElement | HTMLButtonElement>(null);
     const hoverRef = useRef<HTMLDivElement>(null);
 
@@ -21,7 +21,6 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, {
     const props = {
         onClick,
         disabled,
-        style,
         className: twMerge(
             "[--cut-size:15%] cut-corner py-2 px-4 flex items-center gap-3 text-primary border-[1px] border-secondary",
             type === 'secondary' && 'cut-corner-secondary border-quaternary',
@@ -36,9 +35,11 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, {
         ),
         ref: hoverRef,
     }
+
+    let containerChildren: React.ReactNode | null = null;
     
     if (href) {
-        return (
+        containerChildren = (
             <a 
                 {...props}
                 href={href}
@@ -49,16 +50,25 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, {
                 <DirectionHover {...directionHoverProps} />
             </a>
         )
+    } else { 
+        containerChildren = (
+            <button 
+                {...props}
+                ref={containerRef as React.RefObject<HTMLButtonElement>}
+            >
+                {children}
+                <DirectionHover {...directionHoverProps} />
+            </button>
+        )
     }
 
-    return (
-        <button 
-            {...props}
-            ref={containerRef as React.RefObject<HTMLButtonElement>}
+    return(
+        <div
+            ref={ref}
+            style={style}
         >
-            {children}
-            <DirectionHover {...directionHoverProps} />
-        </button>
+            {containerChildren}
+        </div>
     )
 });
 Button.displayName = 'Button';
