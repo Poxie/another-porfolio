@@ -2,7 +2,7 @@ import { Project } from "@/assets/json/types";
 import useAnimateIntoView from "@/hooks/useAnimateIntoView";
 import { faFigma, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { createRef, useRef, useEffect } from "react";
+import { createRef, useRef } from "react";
 
 export default function ProjectLinks({ project, siblingRef }: {
     project: Project;

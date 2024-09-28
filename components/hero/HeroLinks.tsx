@@ -1,6 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { twMerge } from "tailwind-merge";
-import HeroLinkIllustration from "./HeroLinkIllustration";
 import { LINKS } from "@/constants/links";
 import React from "react";
 import HeroLink from "./HeroLink";

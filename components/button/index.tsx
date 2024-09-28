@@ -12,14 +12,13 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, {
     type?: 'primary' | 'secondary';
     className?: string;
     style?: CSSProperties;
-}>(({ children, onClick, disabled, href, type = "primary", className, style }, ref) => {
+}>(({ children, onClick, disabled, href, type = "primary", className, style }) => {
     const containerRef = useRef<HTMLAnchorElement | HTMLButtonElement>(null);
     const hoverRef = useRef<HTMLDivElement>(null);
 
     useDirectionHover(containerRef, hoverRef);
 
     const props = {
-        ref: (ref as any) || containerRef,
         onClick,
         disabled,
         style,
@@ -44,6 +43,7 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, {
                 {...props}
                 href={href}
                 target="_blank"
+                ref={containerRef as React.RefObject<HTMLAnchorElement>}
             >
                 {children}
                 <DirectionHover {...directionHoverProps} />
@@ -52,11 +52,15 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, {
     }
 
     return (
-        <button {...props}>
+        <button 
+            {...props}
+            ref={containerRef as React.RefObject<HTMLButtonElement>}
+        >
             {children}
             <DirectionHover {...directionHoverProps} />
         </button>
     )
 });
+Button.displayName = 'Button';
 
 export default Button;

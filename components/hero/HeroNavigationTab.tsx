@@ -1,3 +1,4 @@
+"use client";
 import useAnimateIntoView from "@/hooks/useAnimateIntoView";
 import { NavbarTab } from "@/types";
 import scrollToSection from "@/utils/scrollToSection";
