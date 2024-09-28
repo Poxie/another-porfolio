@@ -24,9 +24,7 @@ export default function useAnimateIntoView(ref: RefObject<HTMLElement>, {
     duration?: number;
     threshold?: number;
     state?: CSSProperties;
-    initialState?: CSSProperties & {
-        opacity: number;
-    };
+    initialState?: CSSProperties;
     siblingRef?: RefObject<HTMLElement>;
 } | undefined = {}) {
     const isVisible = useIsWithinScroll(ref, { siblingRef, threshold });
