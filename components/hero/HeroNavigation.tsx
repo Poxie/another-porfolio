@@ -1,9 +1,13 @@
 import { NAVBAR_TABS } from "@/constants/tabs";
 import HeroNavigationTab from "./HeroNavigationTab";
+import { twMerge } from "tailwind-merge";
 
 export default function HeroNavigation() {
     return(
-        <ul className="[--right:3rem] pr-[--right] absolute right-0 top-2/4 -translate-y-2/4 overflow-hidden">
+        <ul className={twMerge(
+            "grid",
+            "[--right:3rem] mt-[--right] lg:mt-0 lg:pr-[--right] lg:absolute lg:right-0 lg:top-2/4 lg:-translate-y-2/4 overflow-hidden",
+        )}>
             {NAVBAR_TABS.map((tab, index) => (
                 <li key={tab}>
                     <HeroNavigationTab 

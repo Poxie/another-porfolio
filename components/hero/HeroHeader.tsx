@@ -17,21 +17,21 @@ export default function HeroHeader() {
     return(
         <div className="main-width">
             <h1 
-                className="text-6xl font-semibold"
+                className="text-5xl md:text-6xl font-semibold"
                 style={initialState}
                 ref={headerRef}
             >
                 {t('header')}
             </h1>
             <p 
-                className="mt-2 text-5xl text-secondary"
+                className="mt-2 text-3xl md:text-5xl text-secondary"
                 style={initialState}
                 ref={subheaderRef}
             >
                 {t('subheader')}
             </p>
             <p 
-                className="w-[500px] mt-4 text-2xl text-secondary"
+                className="w-[500px] max-w-full mt-4 text-xl md:text-2xl text-secondary"
                 style={initialState}
                 ref={paragraphRef}
             >

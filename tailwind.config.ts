@@ -45,7 +45,7 @@ const config: Config = {
         contact: '550px',
       },
       maxWidth: {
-        main: '95%',
+        main: '90%',
       },
       animation: {
         'letter-bounce': 'letter-bounce 5s infinite',

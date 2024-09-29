@@ -11,8 +11,8 @@ export default function HeroReadMoreButton() {
     const ref = useRef<HTMLButtonElement>(null);
 
     const { initialState } = useAnimateIntoView(ref, {
-        initialState: { transform: 'translateY(25px)', opacity: '0' },
-        state: { transform: 'translateY(0)', opacity: '1' },
+        initialState: { transform: 'translateY(25px) translateX(-50%)', opacity: '0' },
+        state: { transform: 'translateY(0) translateX(-50%)', opacity: '1' },
         delay: 1400,
         threshold: 1,
     });
