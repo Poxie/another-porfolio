@@ -5,7 +5,7 @@ import HeroReadMoreButton from './HeroReadMoreButton';
 
 export default function Hero() {
     return(
-        <section className="py-section-base md:py-section-lg relative overflow-hidden">
+        <section className="py-section-base md:py-section-lg relative overflow-hidden" id="home">
             <HeroBackground />
             <HeroHeader />
             <HeroNavigation />

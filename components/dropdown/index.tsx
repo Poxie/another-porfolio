@@ -1,15 +1,17 @@
 import useClickOutside from "@/hooks/useClickOutside";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useRef, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 export type DropdownItem = {
     id: string;
     text: string;
 }
-export default function Dropdown({ items, activeId, onChange }: {
+export default function Dropdown({ items, activeId, onChange, className }: {
     items: readonly DropdownItem[];
     activeId: string;
     onChange?: (id: string) => void;
+    className?: string;
 }) {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -28,7 +30,13 @@ export default function Dropdown({ items, activeId, onChange }: {
 
     const activeItem = items.find(item => item.id === activeId) || items[0];
     return(
-        <div className="w-dropdown relative" ref={containerRef}>
+        <div 
+            className={twMerge(
+                "w-dropdown relative",
+                className,
+            )} 
+            ref={containerRef}
+        >
             <button 
                 className="w-full px-3 py-2 text-left text-sm border-[1px] border-tertiary bg-secondary hover:bg-tertiary rounded-md transition-colors"
                 onClick={toggleIsOpen}

@@ -8,7 +8,7 @@ export default function HeroNavigation() {
             "grid",
             "[--right:3rem] mt-[--right] lg:mt-0 lg:pr-[--right] lg:absolute lg:right-0 lg:top-2/4 lg:-translate-y-2/4 overflow-hidden",
         )}>
-            {NAVBAR_TABS.map((tab, index) => (
+            {NAVBAR_TABS.slice(1).map((tab, index) => (
                 <li key={tab}>
                     <HeroNavigationTab 
                         tab={tab}
