@@ -14,7 +14,7 @@ export default function About() {
     
     return(
         <section className="main-width py-section-lg pb-section-base" id="about">
-            <h2 className="text-5xl font-semibold">
+            <h2 className="text-4xl sm:text-5xl font-semibold">
                 {t('title')}
             </h2>
             <AboutTabs onChange={setActiveTab} />
@@ -23,10 +23,10 @@ export default function About() {
                 <p className="text-lg">
                     {t(`content.${activeTab}.text`, { age: getAgeInYears() })}
                 </p>
-                <ul className="mt-6 flex gap-4">
+                <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     {ABOUT_SUMMARIES.about.map(summary => (
                         <li 
-                            className="cut-corner flex-1 px-4 pr-10 py-3 text-lg text-nowrap border-[1px] border-secondary bg-secondary/30"
+                            className="cut-corner flex-1 px-4 py-3 text-lg text-nowrap border-[1px] border-secondary bg-secondary/30"
                             key={summary}
                         >
                             {t(`content.${activeTab}.summary.${summary}`)}
