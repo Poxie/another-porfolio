@@ -43,6 +43,7 @@ const config: Config = {
       width: {
         main: '1200px',
         contact: '550px',
+        dropdown: '140px',
       },
       maxWidth: {
         main: '90%',
