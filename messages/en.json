@@ -41,7 +41,7 @@
             "title": "Onixo",
             "description": "A website for a multi-purpose discord bot. Information and an interactive dashboard.",
             "longDescription": "This website displays information and use cases of the discord bot Onixo. It also allows users to interact with the bot’s settings in the dashboard. It uses Python for the backend, and websockets to talk with the bot.",
-            "date": "Jan, 2024"
+            "date": "Apr, 2023"
         },
         "portfolio": {
             "title": "Portfolio",
