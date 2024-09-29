@@ -19,7 +19,7 @@ export default function Contact() {
     });
 
     return(
-        <section className="p-section-sm relative bg-secondary overflow-hidden" id="contact">
+        <section className="py-section-sm relative bg-secondary overflow-hidden" id="contact">
             <div
                 style={initialState} 
                 className="z-[1] absolute inset-0" 
@@ -28,7 +28,7 @@ export default function Contact() {
                 <div className="h-full bg-tertiary -translate-y-full" />
                 <div className="h-full bg-secondary -translate-y-full" />
             </div>
-            <div className="w-contact mx-auto">
+            <div className="w-contact max-w-main mx-auto">
                 <h2 className="mb-8 text-4xl text-center font-semibold">
                     {t('title')}
                 </h2>
