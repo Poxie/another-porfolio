@@ -1,5 +1,6 @@
+import useClickOutside from "@/hooks/useClickOutside";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import React, { useRef, useState } from "react";
 
 export type DropdownItem = {
     id: string;
@@ -12,17 +13,25 @@ export default function Dropdown({ items, activeId, onChange }: {
 }) {
     const [isOpen, setIsOpen] = useState(false);
 
-    const handleSelect = (id: string) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const handleClickOutside = React.useCallback(() => setIsOpen(false), [])
+    useClickOutside(containerRef, handleClickOutside);
+
+    function toggleIsOpen() {
+        setIsOpen(!isOpen);
+    }
+    function handleSelect(id: string) {
         onChange?.(id);
-        setIsOpen(false);
+        toggleIsOpen();
     }
 
     const activeItem = items.find(item => item.id === activeId) || items[0];
     return(
-        <div className="w-dropdown relative">
+        <div className="w-dropdown relative" ref={containerRef}>
             <button 
                 className="w-full px-3 py-2 text-left text-sm border-[1px] border-tertiary bg-secondary hover:bg-tertiary rounded-md transition-colors"
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={toggleIsOpen}
             >
                 {activeItem.text}
             </button>
