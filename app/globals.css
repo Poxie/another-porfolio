@@ -27,4 +27,23 @@
     --stroke-color: theme(colors.tertiary);
     -webkit-text-stroke: 1px var(--stroke-color); /* Adjust the color and width as needed */
   }
+
+  [data-tooltip] {
+    --from-element: .25rem;
+    @apply relative;
+  }
+  [data-tooltip]:before {
+    @apply absolute bottom-[calc(100%-8px)] left-2/4 -translate-x-2/4 scale-75 opacity-0 w-0 h-0 border-[6px] border-solid border-transparent border-t-secondary transition-[transform,opacity];
+    content: '';
+  }
+  [data-tooltip]::after {
+    @apply px-3 py-2 absolute bottom-[calc(100%+var(--from-element))] left-2/4 -translate-x-2/4 scale-75 font-medium text-sm text-nowrap opacity-0 bg-secondary rounded-md transition-[transform,opacity] duration-300;
+    content: attr(data-tooltip);
+  }
+  [data-tooltip]:hover::after {
+    @apply opacity-100 scale-100;
+  }
+  [data-tooltip]:hover:before {
+    @apply opacity-100 scale-100;
+  }
 }
