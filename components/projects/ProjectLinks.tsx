@@ -9,8 +9,8 @@ export default function ProjectLinks({ project, siblingRef }: {
     siblingRef?: React.RefObject<HTMLElement>;
 }) {
     const links = [
-        { href: project.github, icon: faGithub },
-        { href: project.figma, icon: faFigma },
+        { href: project.github, icon: faGithub, tooltip: 'GitHub repo' },
+        { href: project.figma, icon: faFigma, tooltip: 'Figma file' },
     ];
 
     const linkRefs = useRef(links.map(() => createRef<HTMLAnchorElement>()));
@@ -34,6 +34,8 @@ export default function ProjectLinks({ project, siblingRef }: {
                         className="p-2 block"
                         ref={linkRefs.current[index]}
                         style={initialState}
+                        aria-label={link.tooltip}
+                        data-tooltip={link.tooltip}
                     >
                         <FontAwesomeIcon 
                             icon={link.icon}

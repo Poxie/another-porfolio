@@ -14,7 +14,13 @@ export default function HeroLink({ link, index, siblingRef }: {
     const { initialState } = useAnimateIntoView(ref, { delay: 1300 + (index * 100), siblingRef });
     return(
         <a
-            style={initialState}
+            aria-label={link.tooltip}
+            data-tooltip={link.tooltip}
+            style={{
+                ...initialState,
+                '--from-element': '.6rem',
+                '--arrow-offset': '.15rem',
+            } as React.CSSProperties}
             className="group relative flex items-center justify-center"
             target="_blank"
             href={link.url}

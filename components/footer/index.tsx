@@ -12,6 +12,13 @@ export default function Footer() {
                     {LINKS.map(link => (
                         <li key={link.name}>
                             <a
+                                style={{
+                                    '--from-element': '.6rem',
+                                    '--arrow-offset': '.2rem'
+                                } as React.CSSProperties}
+                                className="block"
+                                data-tooltip={link.tooltip}
+                                aria-label={link.tooltip}
                                 target="_blank"
                                 href={link.url}
                             >
