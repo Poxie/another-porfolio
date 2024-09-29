@@ -1,7 +1,6 @@
 "use client";
 import { Project } from "@/assets/json/types";
 import useAnimateIntoView from "@/hooks/useAnimateIntoView";
-import useIsWithinScroll from "@/hooks/useIsWithinScroll";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useRef } from "react";

@@ -1,4 +1,4 @@
-import { CSSProperties, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 const PREVIEW_WIDTH = 70;
