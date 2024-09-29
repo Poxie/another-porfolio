@@ -6,10 +6,10 @@ import { useLocale } from 'next-intl';
 
 export default function LanguageSelector() {
     const locale = useLocale();
-    const [isPending, startTransition] = useTransition();
+    const transition = useTransition();
 
     const onChange = (language: string) => {
-        startTransition(() => {
+        transition[1](() => {
             setUserLocale(language);
         });
     }
