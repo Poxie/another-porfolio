@@ -1,0 +1,88 @@
+{
+    "hero": {
+        "header": "Tjena, Albin här.",
+        "subheader": "Jag bygger sidor då och då.",
+        "paragraph": "Jag är en fullstack utvecklare, med erfarenhet inom frontend, backend & the cloud."
+    },
+    "about": {
+        "title": "Om min resa",
+        "tabs": {
+            "about": "Om mig",
+            "how-it-started": "Hur det började",
+            "my-mindset": "Mitt mindset"
+        },
+        "content": {
+            "about": {
+                "text": "Jag heter Albin Kärvling. Jag har programmerat sen jag var 12 år, och nu är jag {age}. Jag är en fullstack utvecklare som specialiserar mig på frontend. Trots det har jag bra erfarenhet om backend utveckling och implementering med the cloud. År 2023 tog jag examen från gymnasiet inom naturvetenskap. Trots det har programmering alltid något jag älskat och jobbat med på egen hand.",
+                "summary": {
+                    "start": "8 år av erfarenhet",
+                    "fullstack": "Fullstack utvecklare",
+                    "frontend": "Specialiserad på frontend",
+                    "graduated": "Naturvetenskap examen"
+                }
+            }
+        }
+    },
+    "projects": {
+        "title": "Projects",
+        "statify": {
+            "title": "Statify",
+            "description": "En app gjord för att utöka dina lyssningsvanor. Den använder Next.js och Spotifys API.",
+            "longDescription": "Statify skapades för att enkelt utöka din egen musiksmak baserat på liknande artister och låtar du gillar. Om du vill kan du utforska helt nya genrer och artister.",
+            "date": "Sep, 2023"
+        },
+        "medito": {
+            "title": "Medito",
+            "description": "En insamlingssida skapad för en väletablerad meditationsorganisation.",
+            "longDescription": "Medito var ett insamlingssida som jag fick i uppdrag av en väletablerad meditationsorganisation. Deadline för detta projekt var lite under en vecka, men jag avslutade inom tidsramen och denna sida accepterades.",
+            "date": "Jan, 2024"
+        },
+        "onixo": {
+            "title": "Onixo",
+            "description": "En sida för en mångsidig discord bot. Information om botten, och en interaktiv dashboard.",
+            "longDescription": "Den här hemsidan visar information och användingssätt för en discord bot. På sidan kan man genom en dashboard ändra inställningar för botten. Den använder Python för backend och websockets för att kommunicera med botten.",
+            "date": "Apr, 2023"
+        },
+        "portfolio": {
+            "title": "Portfolio",
+            "description": "Min hemsida som visar vad jag kan, mina erfarenheter, min tech-stack och lite smått och gott om mig.",
+            "longDescription": "Jag har gjort många portfoliosidor under min resa. Detta är den senaste, gjord med hjälp av Next.js, Tailwind och i18n för översättningar.",
+            "date": "Sep, 2024"
+        },
+        "viewProject": "Gå till sidan"
+    },
+    "tech-stack": {
+        "html": {
+            "description": "Inte mycket ren HTML nuförtiden, men strukturen är den samma i JSX."
+        },
+        "css": {
+            "description": "Jag älskar att utforska nya sätt att styla på. Tailwind är favoriten just nu."
+        },
+        "javascript": {
+            "description": "Språket jag började med, och har hållit på med sen dess."
+        },
+        "nodejs": {
+            "description": "Jag har utforskat Python för backend, mend Node.js har varit min go-to på senaste."
+        },
+        "cloud": {
+            "description": "Jag gillar att göra appar automatiska med Googles cloud services."
+        }
+    },
+    "contact": {
+        "title": "Låt oss skapa kontakt.",
+        "name": "Namn",
+        "email": "Email",
+        "message": "Meddelande",
+        "send": "Skapa kontakt",
+        "success": "Tack för ditt meddelande!"
+    },
+    "navbar": {
+        "about": "Om mig",
+        "projects": "Projekt",
+        "tech-stack": "Tech-stack",
+        "contact": "Kontakt"
+    },
+    "footer": {
+        "created-by": "skapad av Albin Kärvling"
+    }
+}

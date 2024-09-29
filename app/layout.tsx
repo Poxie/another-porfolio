@@ -7,6 +7,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 config.autoAddCss = false;
 
 const geistSans = localFont({
@@ -40,6 +41,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
+          <Navbar />
           {children}
           <Footer />
         </NextIntlClientProvider>
