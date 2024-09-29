@@ -15,8 +15,8 @@ export default function Project({ project, index, reversed }: {
         <div 
             id={project.id}
             className={twMerge(
-                "py-16 flex items-center gap-32",
-                reversed && 'flex-row-reverse',
+                "py-16 flex items-center gap-8 flex-col md:flex-row lg:gap-32",
+                reversed && 'md:flex-row-reverse',
             )}
             ref={containerRef}
         >

@@ -7,6 +7,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import ProjectLinks from "./ProjectLinks";
 import { useRef } from "react";
 import useAnimateIntoView from "@/hooks/useAnimateIntoView";
+import { twMerge } from "tailwind-merge";
 
 export default function ProjectInfo({ project, index, siblingRef }: {
     project: Project;
@@ -35,7 +36,10 @@ export default function ProjectInfo({ project, index, siblingRef }: {
     return(
         <div className="relative flex-1">
             <span 
-                className="z-[-1] absolute bottom-full -translate-x-[35%] translate-y-[35%] text-9xl font-extrabold text-transparent stroke-1 stroke-secondary"
+                className={twMerge(
+                    "z-[-1] absolute bottom-full text-9xl font-extrabold text-transparent stroke-1 stroke-secondary",
+                    "right-0 translate-y-[45%] md:translate-y-[35%] md:-translate-x-[35%] md:right-[unset]"
+                )}
             >
                 {projectIndex}
             </span>

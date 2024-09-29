@@ -31,7 +31,7 @@ export default function ProjectImage({ project, siblingRef }: {
 
     const alt = `${t(`${project.id}.title`)}'s preview image`;
     return(
-        <div className="cut-corner flex-1 aspect-video border-[1px] border-secondary">
+        <div className="cut-corner flex-1 w-full aspect-video border-[1px] border-secondary">
             <ProjectPreview url={project.demo}>
                 <div className="h-full relative overflow-hidden">
                     <div 
