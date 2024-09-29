@@ -11,7 +11,6 @@ export default function HeroBackground() {
 
     const [verticalLineCount, setVerticalLineCount] = useState(0);
     const [horizontalLineCount, setHorizontalLineCount] = useState(0);
-    console.log(horizontalLineCount);
     
     const getContainerDimensions = () => ({
         width: containerRef.current?.clientWidth || 0,
