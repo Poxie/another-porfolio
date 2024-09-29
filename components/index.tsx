@@ -3,7 +3,7 @@ import Contact from "./contact";
 import Hero from "./hero";
 import ProjectCards from "./project-cards";
 import Projects from "./projects";
-import TechStack from "./tect-stack";
+import TechStack from "./tech-stack";
 
 export default function Home() {
     return(
