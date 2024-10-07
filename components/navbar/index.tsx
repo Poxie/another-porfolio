@@ -24,7 +24,7 @@ export default function Navbar() {
     useEffect(() => {
         if(!containerRef.current) return;
         
-        let timeouts: NodeJS.Timeout[] = [];
+        const timeouts: NodeJS.Timeout[] = [];
         if(!sticky) {
             if(containerRef.current.style.position !== 'fixed') return;
 
