@@ -8,6 +8,7 @@ import DirectionHover from "../direction-hover";
 import scrollToSection from "@/utils/scrollToSection";
 import useAnimateIntoView from "@/hooks/useAnimateIntoView";
 
+const SCROLL_OFFSET = 100;
 export default function ProjectCard({ project, index }: {
     project: ProjectType;
     index: number;
@@ -32,7 +33,7 @@ export default function ProjectCard({ project, index }: {
 
             <button
                 className="absolute inset-0 w-full h-full"
-                onClick={() => scrollToSection(project.id)}
+                onClick={() => scrollToSection(project.id, SCROLL_OFFSET)}
             />
         </div>
     )
