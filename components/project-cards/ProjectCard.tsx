@@ -7,12 +7,15 @@ import useDirectionHover from "@/hooks/useDirectionHover";
 import DirectionHover from "../direction-hover";
 import scrollToSection from "@/utils/scrollToSection";
 import useAnimateIntoView from "@/hooks/useAnimateIntoView";
+import { useTranslations } from "next-intl";
 
 const SCROLL_OFFSET = 100;
 export default function ProjectCard({ project, index }: {
     project: ProjectType;
     index: number;
 }) {
+    const t = useTranslations('projects');
+
     const containerRef = useRef<HTMLDivElement>(null);
     const hoverRef = useRef<HTMLDivElement>(null);
 
@@ -34,6 +37,7 @@ export default function ProjectCard({ project, index }: {
             <button
                 className="absolute inset-0 w-full h-full"
                 onClick={() => scrollToSection(project.id, SCROLL_OFFSET)}
+                aria-label={`Scroll to ${t(`${project.id}.title`)}`}
             />
         </div>
     )
