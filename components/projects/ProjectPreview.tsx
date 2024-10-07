@@ -77,11 +77,11 @@ export default function ProjectPreview({ children, url }:    {
             
             const { innerWidth, innerHeight } = window;
 
-            let previewWidth = !isSmallScreen ? `${PREVIEW_WIDTH}vw` : `${innerWidth}px`;
-            let previewHeight = !isSmallScreen ? `${PREVIEW_WIDTH * (height / width)}vw` : `${innerHeight}px`;
-            let previewLeft = !isSmallScreen ? '50%' : '0px';
-            let previewTop = !isSmallScreen ? '50%' : '0px';
-            let previewTransform = !isSmallScreen ? 'translate(-50%, -50%)' : '';
+            const previewWidth = !isSmallScreen ? `${PREVIEW_WIDTH}vw` : `${innerWidth}px`;
+            const previewHeight = !isSmallScreen ? `${PREVIEW_WIDTH * (height / width)}vw` : `${innerHeight}px`;
+            const previewLeft = !isSmallScreen ? '50%' : '0px';
+            const previewTop = !isSmallScreen ? '50%' : '0px';
+            const previewTransform = !isSmallScreen ? 'translate(-50%, -50%)' : '';
 
             updateContainerStyles({
                 width: previewWidth,
