@@ -59,7 +59,7 @@ export default function useAnimateIntoView(ref: RefObject<HTMLElement>, {
         if(isVisible) {
             addStyles(state);
         }
-    }, [isVisible]);
+    }, [isVisible, state, initialState, delay, duration]);
 
     return { initialState };
 }

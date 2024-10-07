@@ -3,7 +3,7 @@ import TechPodium from './TechPodium';
 
 export default function TechStack() {
     return(
-        <section className="main-width pt-section-base grid grid-cols-5 items-end overflow-hidden" id="tech-stack">
+        <section className="main-width py-section-sm lg:pb-0 grid gap-8 lg:gap-0 lg:grid-cols-5 items-end overflow-hidden" id="tech-stack">
             {techStack.map((tech, index) => (
                 <TechPodium 
                     tech={tech}

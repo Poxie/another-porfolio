@@ -1,6 +1,7 @@
 "use client";
 import { TechLanguage } from "@/assets/json/types"
 import useAnimateIntoView from "@/hooks/useAnimateIntoView";
+import useScreenSize from "@/hooks/useScreenSize";
 import { useTranslations } from "next-intl";
 import { useRef } from "react";
 
@@ -10,22 +11,26 @@ export default function TechPodium({ tech, index }: {
     index: number;
 }) {
     const t = useTranslations('tech-stack');
+    const screenSize = useScreenSize();
+    const isSmallScreen = ['xs', 'sm', 'md'].includes(screenSize);
+    
+    const ref = useRef<HTMLDivElement>(null);
 
     const isSecondHeight = [1,3].includes(index);
     const isThirdHeight = [0,4].includes(index);
 
-    const ref = useRef<HTMLDivElement>(null);
-
     let delay = 0;
-    if(isSecondHeight) delay = 300;
-    if(isThirdHeight) delay = 600;
+    if(isSecondHeight && !isSmallScreen) delay = 300;
+    if(isThirdHeight && !isSmallScreen) delay = 600;
     
     const { initialState } = useAnimateIntoView(ref, {
         initialState: {
             transform: 'translateY(100%)',
+            opacity: isSmallScreen ? 1 : 0,
         },
         state: {
             transform: 'translateY(0)',
+            opacity: 1,
         },
         threshold: 1,
         duration: 600,
@@ -47,8 +52,8 @@ export default function TechPodium({ tech, index }: {
                 {tech.language}
             </span>
             <div
-                className="bg-secondary border-[1px] border-tertiary rounded-t-2xl"
-                style={{ height: `${podiumHeight}px` }}
+                className="bg-secondary border-[1px] border-tertiary rounded-2xl lg:rounded-b-none"
+                style={{ height: !isSmallScreen ? `${podiumHeight}px` : 'unset' }}
             >
                 <span className="p-4 block border-b-[1px] border-tertiary">
                     {t(`${tech.id}.description`)}
