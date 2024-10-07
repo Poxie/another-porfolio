@@ -1,3 +1,4 @@
+import useScreenSize from "@/hooks/useScreenSize";
 import { useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -6,6 +7,9 @@ export default function ProjectPreview({ children, url }:    {
     children: React.ReactNode;
     url: string;
 }) {
+    const screenSize = useScreenSize();
+    const isSmallScreen = ['xs', 'sm'].includes(screenSize);
+
     const [previewVisible, setPreviewVisible] = useState(false);
     const [initialDimensions, setInitialDimensions] = useState({ 
         width: 0, 
@@ -61,23 +65,31 @@ export default function ProjectPreview({ children, url }:    {
         if (!containerRef.current) return;
 
         const { width, height, left, top } = containerRef.current.getBoundingClientRect();
-
+        
         setInitialDimensions({ width, height, left, top });
         setContainerInitialDimensions({ width, height, left, top });
-
+        
         document.body.style.overflow = 'hidden';
         iframeRef.current!.src = url;
         
         setTimeout(() => {
             setPreviewVisible(true);
             
+            const { innerWidth, innerHeight } = window;
+
+            let previewWidth = !isSmallScreen ? `${PREVIEW_WIDTH}vw` : `${innerWidth}px`;
+            let previewHeight = !isSmallScreen ? `${PREVIEW_WIDTH * (height / width)}vw` : `${innerHeight}px`;
+            let previewLeft = !isSmallScreen ? '50%' : '0px';
+            let previewTop = !isSmallScreen ? '50%' : '0px';
+            let previewTransform = !isSmallScreen ? 'translate(-50%, -50%)' : '';
+
             updateContainerStyles({
-                width: `${PREVIEW_WIDTH}vw`,
-                height: `${PREVIEW_WIDTH * (height / width)}vw`,
-                left: '50%',
-                top: '50%',
-                transform: 'translate(-50%, -50%)',
-            })
+                width: previewWidth,
+                height: previewHeight,
+                left: previewLeft,
+                top: previewTop,
+                transform: previewTransform,
+            });
             hidePreviewImage(true);
         });
     }
@@ -111,7 +123,7 @@ export default function ProjectPreview({ children, url }:    {
         <div 
             className={twMerge(
                 "h-full aspect-video transition-[width,height,top,left,transform] duration-1000",
-                previewVisible && 'z-20 fixed',
+                previewVisible && 'z-[60] fixed',
             )}
             ref={containerRef}
         >
@@ -126,7 +138,7 @@ export default function ProjectPreview({ children, url }:    {
             <iframe 
                 title="Project Preview"
                 className={twMerge(
-                    "z-[1] absolute w-full aspect-video pointer-events-none border-[1px] border-transparent transition-opacity duration-1000",
+                    "z-[1] absolute w-full h-full md:h-[unset] md:aspect-video pointer-events-none border-[1px] border-transparent transition-opacity duration-1000",
                     previewVisible && 'pointer-events-auto border-tertiary',
                 )}
                 ref={iframeRef}
